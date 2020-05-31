@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class BottleDispenser {
 	private int bottles;
-	 // The array for the Bottle-objects
-    //private Bottle[] bottle_array;
-    private int money;
+    	private int money;
     
 
     
@@ -16,14 +14,6 @@ public class BottleDispenser {
     public BottleDispenser() {
         bottles = 5;
         money = 0;
-        /*
-        // Initialize the array
-        bottle_array = new Bottle[bottles];
-        // Add Bottle-objects to the array
-        for(int i = 0;i<bottles;i++) {
-            // Use the default constructor to create new Bottles
-            bottle_array[i] = new Bottle();
-        }*/
         for (int i = 0; i< 5; i++) {
 			Bottle temp = new Bottle();
 			Bottles.add(temp);
