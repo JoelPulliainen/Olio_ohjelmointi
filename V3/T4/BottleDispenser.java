@@ -37,12 +37,12 @@ public class BottleDispenser {
     }
     
     public void buyBottle() {
+	Bottle temp2 = Bottles.get(0);
     	if(bottles < 1)
     		System.out.println("No bottles remaining!");
-    	else if(money < 1.8)
+    	else if(money < temp2.getPrize())
     		System.out.println("Add money first!");
     	else {
-    		Bottle temp2 = Bottles.get(0);
     		System.out.println("KACHUNK! " + temp2.getName() + " came out of the dispenser!");
 			Bottles.remove(temp2);
     		bottles -= 1;
