@@ -1,24 +1,28 @@
-package Tehtavat;
+package tehtavat;
 
+/**
+ *
+ * @author joelp
+ */
 public class Car {
-	
-	Car() {
+    
+    private String Body;
+    private String Chassis;
+    private String Wheel;
+    int nWheel;
+    private String Engine;
+    
+    Car() {
 		Body body = new Body();
 		Chassis chassis = new Chassis();
 		Engine engine = new Engine();
 		Wheel wheel = new Wheel();
 	}
-	void print() {
-		System.out.println("Car parts:");
-		System.out.println("\tBody");
-		System.out.println("\tChassis");
-		System.out.println("\tEngine");
-		System.out.println("\t4 Wheel");
-	}
 	
 	
 	class Chassis {
 		Chassis() {
+                        Chassis = "Chassis";
 			System.out.println("Manufacturing: Chassis");
 		}
 		
@@ -26,12 +30,14 @@ public class Car {
 	
 	class Body {
 		Body() {
+                        Body = "Body";
 			System.out.println("Manufacturing: Body");
 		}
 	}
 	
 	class Engine {
 		Engine() {
+                        Engine = "Engine";
 			System.out.println("Manufacturing: Engine");
 		}
 		
@@ -39,15 +45,21 @@ public class Car {
 	
 	class Wheel {
 		Wheel() {
-			for (int i = 0; i < 4; i++) {
+			for (int i = 1; i < 5; i++) {
 				System.out.println("Manufacturing: Wheel");
+                                nWheel = i;
 			}
+                        Wheel = "Wheel";
+                        
 		}
 		
 	}
-	
-	
-	
-	
-	
+        
+        void print() {
+		System.out.println("Car parts:");
+		System.out.println("\t" + Body);
+		System.out.println("\t" + Chassis);
+		System.out.println("\t" + Engine);
+		System.out.println("\t" + nWheel + " " + Wheel);
+	}	
 }
