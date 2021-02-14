@@ -1,1 +1,67 @@
+package Mainclass;
 
+import java.util.ArrayList;
+
+/**
+ *
+ * @author joelp
+ */
+public class Bank {
+    
+    private ArrayList<Account> accounts;
+    
+    Bank(){
+        accounts = new ArrayList<Account>();
+    }
+    
+    void addAccount(String accountname, int money) {
+        Account temp = new Account(accountname, money);
+        accounts.add(temp);
+        System.out.println("Adding to bank: " + accountname +"," + money);
+    }
+    
+    void addCreditAccount(String accountname, int money, int credit) {
+        CreditAccount temp = new CreditAccount(accountname, money, credit);
+        accounts.add(temp);
+        System.out.println("Adding to bank: " + accountname +"," + money+","+credit);
+    }
+    
+    Account searchAccount(String faccount) {
+        if (accounts.isEmpty()) {
+            return null;
+        }
+        else {
+            for (Account account : accounts) {
+                if (account.getName().equals(faccount)) {
+                    return account;
+                }
+            }
+        return null;
+        }
+    }
+    
+}
+
+class Account {
+    String name;
+    int accountmoney;
+    Account(String accountname, int money) {
+        name = accountname;
+        accountmoney = money;
+    }
+    
+    String getName(){
+        return name;
+    }
+}
+
+class CreditAccount extends Account {
+    String accountname;
+    int money;
+    int creditlimit;
+    public CreditAccount(String accountname, int money, int credit) {
+        super(accountname, money);
+        creditlimit = credit;
+    }
+    
+}
