@@ -85,5 +85,6 @@ public class Mainclass {
 				System.out.println("Invalid input.");
 			}
 		} while (breaker == 0);
+		scan.close();
 	}
 }
