@@ -1,5 +1,9 @@
-package Tehtavat;
+package Mainclass;
 
+/**
+ *
+ * @author joelp
+ */
 import java.util.Scanner;
 
 public class Mainclass {
@@ -9,9 +13,9 @@ public class Mainclass {
 		int breaker = 0;
 		String accountNumber = "";
 		int depositMoney = 0;
-		int creditLimit = 0;
+		int credit = 0;
 		do {
-			System.out.println("*** BANK SYSTEM ***");
+			System.out.println("\n*** BANK SYSTEM ***");
 			System.out.println("1) Add a regular account");
 			System.out.println("2) Add a credit account");
 			System.out.println("3) Deposit money");
@@ -40,10 +44,10 @@ public class Mainclass {
 				System.out.print("Amount of money to deposit: ");
 				depositMoney = scan.nextInt();
 				System.out.print("Give a credit limit: ");
-				depositMoney = scan.nextInt();
+				credit = scan.nextInt();
 				System.out.println("Account number: "+accountNumber);
 				System.out.println("Amount of money: " + depositMoney);
-				System.out.print("Credit: "+creditLimit);
+				System.out.println("Credit: "+credit);
 				break;
 			case 3:
 				System.out.print("Give an account number: ");
@@ -58,13 +62,13 @@ public class Mainclass {
 				System.out.print("Give an account number: ");
 				scan.nextLine();
 				accountNumber = scan.nextLine();
-				System.out.print("Amount of money to deposit: ");
+				System.out.print("Amount of money to withdraw: ");
 				depositMoney = scan.nextInt();
 				System.out.println("Account number: "+accountNumber);
 				System.out.println("Amount of money: " + depositMoney);
 				break;
 			case 5:
-				System.out.print("Give an account number of the account to delete: ");
+				System.out.print("Give the account number of the account to delete: ");
 				scan.nextLine();
 				accountNumber = scan.nextLine();
 				System.out.println("Account number: "+accountNumber);
@@ -76,15 +80,16 @@ public class Mainclass {
 				System.out.println("Account number: "+accountNumber);
 				break;
 			case 7:
-				System.out.print("Prints every account");
+				System.out.println("Prints every account");
 				break;
 			case 0:
 				breaker++;
 				break;
 			default:
-				System.out.println("Invalid input.");
+				System.out.println("Invalid choice.");
 			}
 		} while (breaker == 0);
-		scan.close();
+                scan.close();
 	}
 }
+
